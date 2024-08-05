@@ -1,28 +1,16 @@
-alias d='docker'
-alias d-version='docker --version'
-alias d-info='docker info'
-alias d-ps='docker ps'
-alias d-psa='docker ps -a'
-alias d-logs='docker logs'
-alias d-exec='docker exec -it'
-alias d-images='docker images'
-alias d-search='docker search'
-alias d-rmi='docker rmi'
-alias d-pull='docker pull'
-alias d-push='docker push'
-alias d-start='docker start'
-alias d-stop='docker stop'
-alias d-restart='docker restart'
-alias d-rm='docker rm'
-alias d-run='docker run'
-alias d-run-temp='docker run --rm -it'
-alias d-volumes='docker volume ls'
-alias d-volume-rm='docker volume rm'
-alias d-networks='docker network ls'
-alias d-network-rm='docker network rm'
-alias dc-up='docker-compose up'
-alias dc-upd='docker-compose up -d'
-alias dc-down='docker-compose down'
-alias dc-ps='docker-compose ps'
-alias dc-logs='docker-compose logs'
-alias dc-exec='docker-compose exec'
+FROM alpine:latest
+
+ENV GLIBC_VERSION=2.34-r0
+
+RUN apk add --no-cache \
+    binutils \
+    curl \
+    && curl -Lo /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub \
+    && curl -Lo glibc-${GLIBC_VERSION}.apk https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/glibc-${GLIBC_VERSION}.apk \
+    && apk add --no-cache glibc-${GLIBC_VERSION}.apk \
+    && rm -f glibc-${GLIBC_VERSION}.apk \
+    && apk del curl binutils
+
+RUN apk add --no-cache bash
+
+CMD ["sh"]
