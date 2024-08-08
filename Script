@@ -1,16 +1,17 @@
-FROM alpine:latest
+# Limpa a lixeira.
+sudo rm -rf /home/$USER/.local/share/Trash/files/*
 
-ENV GLIBC_VERSION=2.34-r0
+# Limpa arquivos temporários.
+sudo rm -rf /var/tmp/*
 
-RUN apk add --no-cache \
-    binutils \
-    curl \
-    && curl -Lo /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub \
-    && curl -Lo glibc-${GLIBC_VERSION}.apk https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/glibc-${GLIBC_VERSION}.apk \
-    && apk add --no-cache glibc-${GLIBC_VERSION}.apk \
-    && rm -f glibc-${GLIBC_VERSION}.apk \
-    && apk del curl binutils
+# Limpa o cache do apt-get.
+sudo apt-get clean -y
 
-RUN apk add --no-cache bash
+# Remove repositórios inuteis.
+sudo apt-get autoremove -y
 
-CMD ["sh"]
+# Remove pacotes obsoletos.
+sudo apt-get autoclean -y
+
+# Repara pacotes quebrados.
+sudo dpkg --configure -a
