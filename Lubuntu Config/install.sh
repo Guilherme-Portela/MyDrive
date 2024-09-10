@@ -1,11 +1,11 @@
-flatpak install flathub com.google.Chrome
-flatpak install flathub io.dbeaver.DBeaverCommunity
-flatpak install flathub com.visualstudio.code
-flatpak install flathub org.libretro.RetroArch
-flatpak install flathub page.kramo.Cartridges
-flatpak install flathub org.blender.Blender
-flatpak install flathub com.rtosta.zapzap
-flatpak install flathub com.github.libresprite.LibreSprite
-flatpak install flathub org.godotengine.Godot
-flatpak install flathub com.github.sdv43.whaler
-flatpak install flathub com.anydesk.Anydesk
+flatpak install flathub com.google.Chrome -y
+flatpak install flathub io.dbeaver.DBeaverCommunity -y
+flatpak install flathub com.visualstudio.code -y
+flatpak install flathub org.libretro.RetroArch -y
+flatpak install flathub page.kramo.Cartridges -y
+flatpak install flathub org.blender.Blender -y
+flatpak install flathub com.rtosta.zapzap -y
+flatpak install flathub com.github.libresprite.LibreSprite -y
+flatpak install flathub org.godotengine.Godot -y
+flatpak install flathub com.github.sdv43.whaler -y
+flatpak install flathub com.anydesk.Anydesk -y
