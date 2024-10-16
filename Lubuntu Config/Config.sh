@@ -1,7 +1,11 @@
 #!/bin/bash
 
-sudo apt update
+cd /media/guilherme/Arquivos/
+mkdir "CodingStart"
 
+cd /home/guilherme/
+
+sudo apt update
 
 sudo apt install flatpak -y
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
