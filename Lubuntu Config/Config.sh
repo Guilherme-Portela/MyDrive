@@ -2,9 +2,6 @@
 
 sudo apt update
 
-sudo apt install git -y
-
-sudo apt install python3 python3-pip python3-virtualenv pipx -y
 
 sudo apt install flatpak -y
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -20,8 +17,4 @@ sudo usermod -aG docker ${USER}
 su - ${USER}
 groups
 sudo usermod -aG docker guilherme
-
-python3 -m venv $VENV_PATH
-$VENV_PATH/bin/pip install -U pip setuptools
-$VENV_PATH/bin/pip install poetry
 
