@@ -9,8 +9,8 @@ flatpak install flathub com.anydesk.Anydesk -y
 flatpak install flathub org.kde.kdenlive -y
 flatpak install flathub com.google.Chrome -y
 
-sudo apt install python3 python3-pip python3-virtualenv pipx git tilix -y
-python3 -m venv $VENV_PATH
-
-pip install -U pip setuptools
+sudo apt install python3 python3-pip git
+python3 -m venv ~/venv
+source ~/venv/bin/activate
+pip install --upgrade pip setuptools
 pip install poetry
