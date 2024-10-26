@@ -19,3 +19,4 @@ su - ${USER}
 groups
 sudo usermod -aG docker guilherme
 
+reboot
