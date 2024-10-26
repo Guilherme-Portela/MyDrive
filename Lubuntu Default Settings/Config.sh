@@ -1,8 +1,5 @@
 #!/bin/bash
 
-cd /media/guilherme/Arquivos/
-mkdir "CodingStart"
-
 cd /home/guilherme/
 
 sudo apt update
