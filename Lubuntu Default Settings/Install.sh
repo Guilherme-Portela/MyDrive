@@ -8,6 +8,7 @@ flatpak install flathub com.github.sdv43.whaler -y
 flatpak install flathub com.anydesk.Anydesk -y
 flatpak install flathub org.kde.kdenlive -y
 flatpak install flathub com.google.Chrome -y
+flatpak install flathub md.obsidian.Obsidian -y
 
 sudo apt install python3 python3-pip git
 python3 -m venv ~/venv
